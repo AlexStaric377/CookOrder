@@ -1,0 +1,198 @@
+﻿<Window x:Class="CookOrder.ListOrderCook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CookOrder"
+        mc:Ignorable="d"
+        Title="ListOrderCook" Height="Auto" Width="Auto" ShowInTaskbar="False" ResizeMode="NoResize" 
+           WindowStyle="None" WindowState="Maximized" AllowDrop="False" >
+    <Window.Resources>
+        <!-- Создаем шаблон с названием ClassButton для элементов типа Button -->
+        <ControlTemplate x:Key="ClassButton" TargetType="{x:Type Button}">
+            <!-- Секция дня описания кнопки -->
+            <!-- Наружная граница белая -->
+            <Border BorderBrush="White" Background="#FFF4F9C5" BorderThickness="1,1,1,1" CornerRadius="10,10,10,10">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto"  />
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ClassButton2" TargetType="{x:Type Button}">
+            <!-- Секция дня описания кнопки -->
+            <!-- Наружная граница белая -->
+            <Border BorderBrush="White" Background="#FFC7F9C5" BorderThickness="1,1,1,1" CornerRadius="10,10,10,10">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto"  />
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ClassButton3" TargetType="{x:Type Button}">
+            <!-- Секция дня описания кнопки -->
+            <!-- Наружная граница белая -->
+            <Border BorderBrush="White" Background="#FFE0D0FB" BorderThickness="1,1,1,1" CornerRadius="10,10,10,10">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto"  />
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ClassButton4" TargetType="{x:Type Button}">
+            <!-- Секция дня описания кнопки -->
+            <!-- Наружная граница белая -->
+            <Border BorderBrush="White" Background="#FFD3EEF3" BorderThickness="1,1,1,1" CornerRadius="10,10,10,10">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto"  />
+            </Border>
+        </ControlTemplate>
+        <Style x:Key="DGridCentAl" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid  >
+        <!--<Grid.Background >
+            <ImageBrush x:Name="StartImage" ImageSource="pack://application:,,,/ScreenCook;component/Images/screen-14fon.jpg"/>
+        </Grid.Background>-->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="326*" />
+            <RowDefinition Height="22*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition  Width ="200*"/>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition  Width ="200*"/>
+                <ColumnDefinition Width="200*"/>
+            </Grid.ColumnDefinitions>
+
+
+
+
+            <Button  x:Name ="NewOrder" Grid.Column="0"   FontWeight="Bold" Template="{DynamicResource ClassButton}"  Width="210" Height="60"  VerticalAlignment="Center" HorizontalAlignment = "Center" Click="ClickCheckBox_NewOrder"  >
+                <Button.Effect>
+                    <DropShadowEffect Color="#FF1D1504" BlurRadius="35" ShadowDepth="10" Opacity="0.5" ></DropShadowEffect>
+                </Button.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="170*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="BackMain" Grid.Column="1" Content="Нове замовлення" FontFamily="dinpro-bold"  FontSize="16" FontWeight="Bold" Foreground="Black" VerticalAlignment="Center"  />
+                    <CheckBox Grid.Column="0" x:Name="CheckBoxNewOrder" IsChecked="True" Content="" HorizontalAlignment="Center" Height="22"  VerticalAlignment="Center" Width="22"  Margin="19,10,9,0"/> <!--Click="Click_NewOrder"-->
+                </Grid>
+            </Button>
+            <Button  x:Name ="Gotuetcya" Grid.Column="1"   FontWeight="Bold" Template="{DynamicResource ClassButton2}"  Width="210" Height="60"  VerticalAlignment="Center" HorizontalAlignment = "Center" Click="ClickCheckBox_Gotuetcya"   >
+                <Button.Effect>
+                    <DropShadowEffect Color="#FF1D1504" BlurRadius="35" ShadowDepth="10" Opacity="0.5" ></DropShadowEffect>
+                </Button.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="170*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="a" Grid.Column="1" Content="Готується" FontFamily="dinpro-bold"  FontSize="16" FontWeight="Bold" Foreground="Black" VerticalAlignment="Center"  />
+                    <CheckBox Grid.Column="0" x:Name="CheckBoxGotuetcya" IsChecked="True" Content="" HorizontalAlignment="Center" Height="22"  VerticalAlignment="Center" Width="22" Margin="19,10,9,0" ><!--Click="Gotuetcya_Click"-->
+
+                    </CheckBox>
+                </Grid>
+            </Button>
+            <Button  x:Name ="Gotovo" Grid.Column="2"   FontWeight="Bold" Template="{DynamicResource ClassButton3}"  Width="210" Height="60"  VerticalAlignment="Center" HorizontalAlignment = "Center" Click="ClickCheckBox_Gotovo"  >
+                <Button.Effect>
+                    <DropShadowEffect Color="#FF1D1504" BlurRadius="35" ShadowDepth="10" Opacity="0.5" ></DropShadowEffect>
+                </Button.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="170*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="G" Grid.Column="1" Content="Виготовлено" FontFamily="dinpro-bold"  FontSize="16" FontWeight="Bold" Foreground="Black" VerticalAlignment="Center"  />
+                    <CheckBox Grid.Column="0" x:Name="CheckBoxGotovo" IsChecked="True" Content="" HorizontalAlignment="Center" Height="22"  VerticalAlignment="Center" Width="22" Margin="19,10,9,0"  /><!--Click="Gotovo_Click"-->
+                </Grid>
+            </Button>
+            <Button  x:Name ="StopList" Grid.Column="3"   FontWeight="Bold" Template="{DynamicResource ClassButton4}"  Width="210" Height="60"  VerticalAlignment="Center" HorizontalAlignment = "Center"   Click="StopList_Click" >
+                <Button.Effect>
+                    <DropShadowEffect Color="#FF1D1504" BlurRadius="35" ShadowDepth="10" Opacity="0.5" ></DropShadowEffect>
+                </Button.Effect>
+                <Label Name="S" Grid.Column="1" Content="Стоп Лист" FontFamily="dinpro-bold"  FontSize="16" FontWeight="Bold" Foreground="Black" VerticalAlignment="Center"  />
+            </Button>
+        </Grid>
+
+        <!--<Viewbox Grid.Row="1" x:Name="DataGrid" VerticalAlignment="Top"  >-->
+        <DataGrid Grid.Row="1" Loaded="Users_Loaded" MouseUp="Users_MouseUp" x:Name="TableOrders" Cursor="Hand" 
+                                              IsReadOnly="true" AutoGenerateColumns="false" ColumnHeaderStyle="{StaticResource DGridCentAl}" 
+                                               HorizontalAlignment="Center" Width="Auto" Height="Auto" ColumnHeaderHeight="50" FontSize="20" RowHeight="80"
+                                              VerticalAlignment="Top" GridLinesVisibility="Vertical" ManipulationBoundaryFeedback="OnManipulationBoundaryFeedback"
+                  ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn x:Name="Number" Header=" № Замовлення " Width="180"  Binding="{Binding Path=Number}" FontWeight="Medium"/>
+                <DataGridTextColumn x:Name="Type"  Header="Тип видачи" Width="150" Binding="{Binding Path=VidGiveOut}"/>
+                <!--<DataGridTemplateColumn Header="Час на видачу" Width="160"  SortMemberPath="TimeOut">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Path=TimeOut}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+                <DataGridTextColumn x:Name="Time" Header="Час на видачу" Width="160" Binding="{Binding Path=TimeOut}" FontSize="26" FontWeight="Bold"/>
+                <DataGridTextColumn x:Name="NameT" Header="Назва товару" Width="600"  Binding="{Binding Path=NameTov}" FontSize="18" FontWeight="Medium">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Кількість" Width="110" Binding="{Binding Path=Quantity}"/>
+                <DataGridTextColumn Header="Статус " Width="170" Binding="{Binding Path=Status}" FontSize="18">
+                <DataGridTextColumn.ElementStyle>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                    </Style>
+                </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+
+            <DataGrid.RowStyle>
+
+                <Style TargetType="DataGridRow">
+                    <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                    <Setter Property="BorderBrush" Value="#FFF4F9C5"/>
+                    <Setter Property="Background" Value="White"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=Line}" Value="1">
+                            <Setter Property="BorderBrush" Value="Black"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=MemStatus}" Value="нове замовлення">
+                            <Setter Property="Background" Value="#FFF4F9C5"></Setter>
+
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=MemStatus}" Value="готується">
+                            <Setter Property="Background" Value="#FFC7F9C5"></Setter>
+
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=MemStatus}" Value="виготовлено">
+                            <Setter Property="Background" Value="#FFE0D0FB"></Setter>
+
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=MemStatus}" Value="отримано">
+                            <Setter Property="Background" Value="#FFFB9994"></Setter>
+
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=MemStatus}" Value="відмінено">
+                            <Setter Property="Background" Value="#FFFFA775"></Setter>
+
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+
+
+        </DataGrid>
+
+        <!--</Viewbox>-->
+
+
+
+        <Label Name="Avtor" Grid.Row="2" Content="© ND-Group, 2020. Всі права захищені." Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="10" Height="24" Width="200" MouseLeftButtonDown="Exit_MouseLeftButtonDown" />
+
+    </Grid>
+</Window>

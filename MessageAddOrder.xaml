@@ -1,0 +1,24 @@
+﻿<Window x:Class="CookOrder.MessageAddOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CookOrder"
+        mc:Ignorable="d"
+        Title="MessageAddOrder" WindowState="Normal" AllowsTransparency="True" WindowStyle="None"   ShowInTaskbar="False"
+        Height="300" Width="400" Background="{x:Null}"  WindowStartupLocation="CenterOwner">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="280" Width="380" Name="WinGrid"><!--KeyDown="ConectoW_KeyDown"-->
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/CookOrder;component/Images/podskazka1.png" Stretch="Fill" TileMode="None" />
+        </Grid.Background>
+        <Image Height="22" HorizontalAlignment="Left"  Name="Close_F" Stretch="None" VerticalAlignment="Top" Width="22"
+               Source="pack://application:,,,/CookOrder;component/Images/x2.png" MouseLeftButtonDown="Close_F_MouseLeftButtonDown"
+               Cursor="Hand" Margin="305,53,0,0" RenderTransformOrigin="0.785,0.2"   />
+        
+        <Grid Height="90" HorizontalAlignment="Center"  Name="grid2" VerticalAlignment="Center" Width="208" Margin="86,76,86,114">
+            <TextBlock TextAlignment="Center" FontFamily="Calibri" Text="Надійшло нове замовлення" FontSize="22" Name="MessageText" VerticalAlignment="Center" 
+                       TextWrapping="Wrap"    HorizontalAlignment="Center" Width="209"/>
+
+        </Grid>
+    </Grid>
+</Window>
